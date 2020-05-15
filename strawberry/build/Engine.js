@@ -31,17 +31,14 @@ export default class Engine {
         };
         this.startGame = () => {
             if (!this.playingMusic) {
-                const src = 'https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3';
+                const src = './static/musictrack.mp3';
                 const audio = new Audio(src);
-                audio.onended = (() => {
-                  audio.play();
-                });
-                
+                audio.loop = true;
                 document.onkeydown = () => {
-                        audio.play();
-                    document.onkeydown = () => {};
-                }
-                
+                    audio.play();
+                    document.onkeydown = () => { };
+                };
+                // audio.play();
                 this.playingMusic = true;
             }
             this.start();
