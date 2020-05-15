@@ -36,7 +36,12 @@ export default class Engine {
                 audio.onended = (() => {
                   audio.play();
                 });
-                audio.play();
+                
+                document.onkeydown = () => {
+                        audio.play();
+                    document.onkeydown = () => {};
+                }
+                
                 this.playingMusic = true;
             }
             this.start();
